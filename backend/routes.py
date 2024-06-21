@@ -9,7 +9,7 @@ def handle_users():
         new_user = User(username=data['username'], email=data['email'])
         db.session.add(new_user)
         db.session.commit()
-        return jsonify(new_user.id), 201
+        return jsonify(new_user.to_dict()), 201
 
     users = User.query.all()
     return jsonify([user.to_dict() for user in users]), 200
@@ -21,7 +21,7 @@ def handle_projects():
         new_project = Project(name=data['name'])
         db.session.add(new_project)
         db.session.commit()
-        return jsonify(new_project.id), 201
+        return jsonify(new_project.to_dict()), 201
 
     projects = Project.query.all()
     return jsonify([project.to_dict() for project in projects]), 200
@@ -32,13 +32,13 @@ def handle_tasks():
         data = request.get_json()
         new_task = Task(
             title=data['title'],
-            description=data['description'],
+            description=data.get('description'),
             user_id=data['user_id'],
             project_id=data['project_id']
         )
         db.session.add(new_task)
         db.session.commit()
-        return jsonify(new_task.id), 201
+        return jsonify(new_task.to_dict()), 201
 
     tasks = Task.query.all()
     return jsonify([task.to_dict() for task in tasks]), 200
