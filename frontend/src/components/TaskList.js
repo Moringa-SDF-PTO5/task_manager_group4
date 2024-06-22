@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './styles/lists.css';
 
 const TaskList = ({ tasks }) => {
   const [taskList, setTaskList] = useState(tasks);

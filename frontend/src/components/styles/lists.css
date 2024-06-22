@@ -1,0 +1,20 @@
+/* Styles for lists */
+ul {
+  list-style: none;
+  padding: 0;
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+ul li {
+  padding: 0.5rem;
+  border-bottom: 1px solid #ccc;
+}
+
+ul li:last-child {
+  border-bottom: none;
+}
+
+ul li span {
+  font-weight: bold;
+}

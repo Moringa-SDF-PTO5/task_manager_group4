@@ -17,9 +17,18 @@ const ProjectForm = ({ addProject }) => {
           },
           body: JSON.stringify(values),
         })
-          .then(response => response.json())
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            return response.json();
+          })
           .then(data => {
             addProject(data);
+            setSubmitting(false);
+          })
+          .catch(error => {
+            console.error('Error fetching data:', error);
             setSubmitting(false);
           });
       }}
