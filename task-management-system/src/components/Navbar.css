@@ -1,0 +1,46 @@
+.navbar {
+    background-color: #f8f8f8; /* Light gray background similar to Apple */
+    border-bottom: 1px solid #ccc; /* Light border at the bottom */
+    padding: 10px 0; /* Padding around the navbar */
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; /* Adjust as needed */
+    margin: 0 auto; /* Center the content */
+    padding: 0 20px; /* Padding inside the container */
+  }
+  
+  .brand-logo {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Similar to Apple's font stack */
+    font-size: 24px; /* Example font size */
+    font-weight: bold; /* Example font weight */
+    color: #333; /* Dark gray color */
+    text-decoration: none; /* Remove underline */
+  }
+  
+  .nav-links {
+    list-style-type: none; /* Remove bullet points */
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .nav-links li {
+    margin-right: 15px; /* Adjust spacing between navigation items */
+  }
+  
+  .nav-link {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    color: #666; /* Slightly lighter gray color */
+    text-decoration: none;
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+  }
+  
+  .nav-link:hover {
+    color: #000; /* Darken color on hover */
+  }
+  

@@ -1,0 +1,64 @@
+/* HomePage.css */
+.home-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full viewport height */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .home-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.zohowebstatic.com/sites/zweb/images/projects/task-management/map.png') no-repeat center center;
+    background-size: cover;
+    filter: brightness(0.3); /* Darken the image */
+    z-index: -1; /* Ensure the background is behind the content */
+  }
+  
+  .home-container {
+    max-width: 600px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1; /* Ensure the content is above the overlay */
+  }
+  
+  .home-container h1 {
+    font-size: 24px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin-bottom: 20px;
+  }
+  
+  .home-container h2 {
+    font-size: 20px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin-bottom: 30px;
+  }
+  
+  .login-link {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #007bff;
+    text-decoration: none;
+    border: 2px solid #007bff;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .login-link:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
