@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Auth.css';
-import { loginUser } from '../api';  // Ensure this path is correct
+import { loginUser } from '../api';  // Adjust the path as needed
 
 const LoginPage = () => {
   const [formData, setFormData] = useState({ email: '', password: '' });
   const [error, setError] = useState(null); // State to hold error message
-  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -16,10 +15,9 @@ const LoginPage = () => {
     e.preventDefault();
 
     try {
-      const data = await loginUser(formData);
+      const token = await loginUser(formData);
       // Handle successful login (e.g., save token in localStorage, redirect user)
-      console.log('Login successful:', data);
-      navigate('/menu'); // Redirect to menu page upon successful login
+      console.log('Login successful. Token:', token);
     } catch (error) {
       // Handle login error
       console.error('Login error:', error);

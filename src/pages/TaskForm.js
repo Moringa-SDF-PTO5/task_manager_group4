@@ -1,36 +1,25 @@
 import React, { useState } from 'react';
-import './TaskForm.css';
 
 const TaskForm = ({ onSubmit }) => {
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
-  const [dueDate, setDueDate] = useState('');
+  const [task, setTask] = useState('');
+
+  const handleChange = (e) => {
+    setTask(e.target.value);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit({ title, description, dueDate });
+    onSubmit({ task });
+    setTask(''); // Clear input after submission (if needed)
   };
 
   return (
-    <form className="task-form" onSubmit={handleSubmit}>
-      <label>Title</label>
+    <form onSubmit={handleSubmit}>
       <input
         type="text"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-        required
-      />
-      <label>Description</label>
-      <textarea
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
-        required
-      />
-      <label>Due Date</label>
-      <input
-        type="date"
-        value={dueDate}
-        onChange={(e) => setDueDate(e.target.value)}
+        value={task}
+        onChange={handleChange}
+        placeholder="Enter task description"
         required
       />
       <button type="submit">Create Task</button>
