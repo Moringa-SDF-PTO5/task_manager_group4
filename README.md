@@ -84,7 +84,7 @@ npm start
 Open your browser and navigate to http://localhost:3000 to access the React frontend.
 Use the application to manage your tasks, view the list of tasks, add new tasks, edit existing tasks, and delete tasks.
 
-###API Endpoints
+### API Endpoints
 GET /tasks: Retrieve all tasks
 POST /tasks: Create a new task
 PUT /tasks/
