@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/Users/stellanthenya/Development/code/flask/task_manager_group4/venv"
+VIRTUAL_ENV="/mnt/c/Users/ADMIN/task_manager/venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
